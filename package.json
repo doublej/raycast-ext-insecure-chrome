@@ -1,0 +1,49 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "insecure-chrome",
+  "title": "Insecure Chrome",
+  "description": "Launch Chrome Canary with insecure HTTP flags for local development",
+  "icon": "command-icon.png",
+  "author": "jurrejan",
+  "categories": ["Developer Tools"],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "open-insecure-chrome",
+      "title": "Open Insecure Chrome",
+      "description": "Launch Chrome with insecure origin flags",
+      "mode": "no-view",
+      "arguments": [
+        {
+          "name": "domain",
+          "type": "text",
+          "placeholder": "Domain",
+          "required": true
+        },
+        {
+          "name": "port",
+          "type": "text",
+          "placeholder": "80",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.83.0",
+    "@raycast/utils": "^1.17.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "^20.8.10",
+    "@types/react": "^18.3.3",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "build": "ray build --skip-types -e dist -o dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint"
+  }
+}
